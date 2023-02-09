@@ -5,14 +5,14 @@
     overflow-y: scroll;
   }
   
-.feed::-webkit-scrollbar {
+/* .feed::-webkit-scrollbar {
     display: none;
 }
 
 .feed {
     -ms-overflow-style: none;
     scrollbar-width: none;
-}
+} */
 
 .feed__header {
     position: sticky;
