@@ -1,3 +1,5 @@
+import { Post } from "../post/Post"
+import { TweetBox } from "../tweetbox/TweetBox"
 import "./Feed.css"
 
 export function Feed() {
@@ -5,43 +7,9 @@ export function Feed() {
         <div className="feed">
          <div className="feed__header">
           <h2>Feed</h2>
-         </div>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-         <h2>Hi</h2>
-
+          <TweetBox />
+         </div>  
+         <Post />
         </div>
     )
 }
