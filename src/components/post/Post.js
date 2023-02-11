@@ -1,40 +1,45 @@
-import { ChatBubble, Favorite, Publish, Repeat, VerifiedUser } from '@mui/icons-material'
-import { Avatar } from '@mui/material'
-import "./Post.css"
+import React, {forwardRef} from 'react';
+import {
+  ChatBubble,
+  Favorite,
+  Publish,
+  Repeat,
+  VerifiedUser,
+} from '@mui/icons-material';
+import {Avatar} from '@mui/material';
+import './Post.css';
 
-
-export function Post({
-    displayName, username, verified, text, image, avatar
-}) {
-  return (
-    <div className='post'>
-        <div className='post__avatar'>
-          <Avatar />
+export const Post = forwardRef (
+  ({displayName, username, verified, text, image, avatar}, ref) => {
+    return (
+      <div className="post" ref={ref}>
+        <div className="post__avatar">
+          <Avatar src={avatar} />
         </div>
-        <div className='post__body'>
-            <div className='post__header'>
-                <div className='post__headerText'>
-                    <h3>
-                        Kene10 <span><VerifiedUser className='post__badge' /> </span>
-                    </h3>
-                </div>
-                <div className="post__headerDescription">
-                  <p>Learn and build twitter application</p>
-                </div>
+        <div className="post__body">
+          <div className="post__header">
+            <div className="post__headerText">
+              <h3>
+                {displayName}{' '}
+                <span className="post__headerSpecial">
+                  {verified && <VerifiedUser className="post__badge" />} @
+                  {username}
+                </span>
+              </h3>
             </div>
-            <img 
-              src="https://media3.giphy.com/media/65ATdpi3clAdjomZ39/giphy.gif"
-              alt="" 
-            />
-            <div className='post__footer'>
-              <ChatBubble fontSize='small' />
-                <Repeat fontSize='small' />
-                <Favorite fontSize="small" />
-                <Publish fontSize="small" />
+            <div className="post__headerDescription">
+              <p>{text}</p>
             </div>
+          </div>
+          <img src={image} alt="" />
+          <div className="post__footer">
+            <ChatBubble fontSize="small" />
+            <Repeat fontSize="small" />
+            <Favorite fontSize="small" />
+            <Publish fontSize="small" />
+          </div>
         </div>
-    </div>
-  )
-}
-
-
+      </div>
+    );
+  }
+);

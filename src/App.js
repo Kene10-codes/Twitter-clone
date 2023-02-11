@@ -1,8 +1,7 @@
-import { Sidebar, Feed, Widgets } from './components/index';
+import {Sidebar, Feed, Widgets} from './components/index';
 import './App.css';
 
-
-function App() {
+function App () {
   return (
     <div className="app">
       <Sidebar />

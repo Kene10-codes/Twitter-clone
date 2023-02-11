@@ -2,25 +2,26 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-}
-
-.sidebarOption > .MuiSvgIcon-root {
-    padding: 20px;
-}
-
-.sidebarOption:hover {
+  }
+  
+  .sidebarOption:hover {
     background-color: #e8f5fe;
-    border-radius: 20px;
+    border-radius: 30px;
     color: var(--twitter-color);
-    /* transition: color 0.1s ease-out;  */
-}
-
-.sidebarOption h2 {
+    transition: color 0.1s ease-out;
+  }
+  
+  .sidebarOption > .MuiSvgIcon-root {
+    padding: 20px;
+  }
+  
+  .sidebarOption > h2 {
     font-weight: 800;
     font-size: 20px;
     margin-right: 20px;
-}
-
-.sidebarOption--active {
+  }
+  
+  .sidebarOption--active {
     color: var(--twitter-color);
-}
+  }
+  
