@@ -9,7 +9,7 @@ import './Widgets.css';
 export function Widgets () {
   return (
     <div className="widgets">
-      <div className="widget__input">
+      <div className="widgets__input">
         <Search className="widgets__searchIcon" />
         <input placeholder="Search Twitter" type="text" />
       </div>
@@ -21,7 +21,7 @@ export function Widgets () {
           screenName="Kene10"
           options={{height: 400}}
         />
-  
+
         <TwitterShareButton
           url={'https://www.twitter.com/Kene10_'}
           options={{text: 'React application', via: 'Kene10'}}
