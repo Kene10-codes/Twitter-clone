@@ -15,13 +15,13 @@ export function Widgets () {
       </div>
       <div className="widgets__widgetContainer">
         <h2>What's happening ? </h2>
-        <TwitterTweetEmbed tweetId={'1624306704274886656'} />
+        <TwitterTweetEmbed tweetId={'1621970033952825344'} />
         <TwitterTimelineEmbed
           sourceType="profile"
           screenName="Kene10"
           options={{height: 400}}
         />
-
+  
         <TwitterShareButton
           url={'https://www.twitter.com/Kene10_'}
           options={{text: 'React application', via: 'Kene10'}}

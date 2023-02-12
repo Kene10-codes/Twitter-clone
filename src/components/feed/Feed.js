@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import FlipMove from 'react-flip-move';
+import {collection, query, onSnapshot} from 'firebase/firestore';
 import {Post} from '../post/Post';
 import {TweetBox} from '../tweetbox/TweetBox';
 import {db} from '../../firebase';
@@ -9,16 +10,22 @@ export function Feed () {
   const [posts, setPosts] = useState ([]);
 
   useEffect (() => {
-    db
-      .collection ('posts')
-      .onSnapshot (snapshot =>
-        setPosts (snapshot.docs.map (doc => doc.data ()))
-      );
+    const q = query (collection (db, 'posts'));
+
+    const unsubscribe = onSnapshot (q, snapshot => {
+      let posts = [];
+      snapshot.forEach (doc => {
+        posts.push ({...doc.data (), id: doc.id});
+      });
+      setPosts (posts);
+    });
+
+    return () => unsubscribe ();
   }, []);
 
   const post = posts.map (post => (
     <Post
-      key={post.username}
+      key={post.id}
       displayName={post.displayName}
       username={post.username}
       image={post.image}

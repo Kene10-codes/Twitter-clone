@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {collection, addDoc} from 'firebase/firestore';
 import {Button, Avatar} from '@mui/material';
 import {db} from '../../firebase';
 import './TweetBox.css';
@@ -10,14 +11,21 @@ export function TweetBox () {
   const sendMessage = e => {
     e.preventDefault ();
 
-    db.collection ('posts').add ({
-      displayName: 'Kene10',
-      username: 'Kene10',
-      verified: true,
-      text: tweetMessage,
-      image: tweetImage,
-      avatar: '',
-    });
+    if (tweetMessage.trim === '') {
+      alert ('Tweet Something');
+      return;
+    }
+
+    addDoc (
+      collection (db, 'posts', {
+        displayName: 'Kene10',
+        username: 'Kene10',
+        verified: true,
+        text: tweetMessage,
+        image: tweetImage,
+        avatar: '',
+      })
+    );
 
     setTweetMessage ('');
     setTweetImage ('');
