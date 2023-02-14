@@ -11,7 +11,7 @@ export function TweetBox () {
   const sendMessage = e => {
     e.preventDefault ();
 
-    if (tweetMessage.trim === '') {
+    if (tweetMessage === '') {
       alert ('Tweet Something');
       return;
     }
@@ -23,7 +23,7 @@ export function TweetBox () {
         verified: true,
         text: tweetMessage,
         image: tweetImage,
-        avatar: '',
+        avatar: 'https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png',
       })
     );
 
